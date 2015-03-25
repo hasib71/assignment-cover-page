@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+		<script src="app.js"></script>
+
+		<title>Assignment</title>
+
+		<style type="text/css">
+			.ass-title{
+				font-size: 20px;
+			}
+			.ass-logo{
+				
+				width: 100%;
+			}
+		</style>
+
+
+	</head>
+
+	<body>
+		<div class="container" ng-app="myApp" ng-controller="myController">
+			<center>
+				<img src="nsu-logo.png" class="ass-logo">
+				<h1>Assignment</h1>
+			</center>
+			<br />
+			<div class="ass-title">
+				<div class="row">
+					<div class="col-sm-6">
+					
+						<p>
+							<b>Name: </b>{{name}}
+						</p>
+						<hr />
+						<p>
+							<b>Section: </b>{{section}}
+						</p>
+						<hr />
+						<p>
+							<b>Faculty: </b>{{faculty}}
+						</p>
+						<hr />
+					
+					</div>
+					<div class="col-sm-6">
+						<p>
+							<b>ID: </b>{{id}}
+						</p>
+						<hr />
+						<p>
+							<b>Course: </b>{{course}}
+						</p>
+						<hr />
+						<p>
+							<b>Date: </b>{{date}}
+						</p>
+						<hr />
+					</div>
+				</div>
+				<br />
+				<div>
+					<h1><small>Tasks</small></h1>
+					<hr />
+					<div ng-repeat="task in taskList" >
+						<blockquote>
+							<b>Task {{$index + 1}}:</b> {{task}}
+						</blockquote>
+						<hr />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
