@@ -6,7 +6,11 @@ app.controller('myController', function($scope){
 	$scope.section = 18;
 	$scope.faculty = "AMK";
 	$scope.course = "Computer Concepts";
+	$scope.taskList = ["Tower of Hanoi", "Printing a Diamond"];
 	
+	$scope.isShowForm = 1;
+	$scope.isShowResult = 0;
+	$scope.isShowButtons = 0;
 
 	$scope.getCurrentDate = function(){
 		var today = new Date();
@@ -29,5 +33,24 @@ app.controller('myController', function($scope){
 
 	$scope.date = $scope.getCurrentDate();
 
-	$scope.taskList = ["Tower of Hanoi", "Printing a Diamond"];
+	$scope.addTask = function(){
+		$scope.taskList.push("");
+	}
+
+	$scope.showPreview = function(){
+		$scope.isShowResult = 1;
+		$scope.isShowButtons = 1;
+		$scope.isShowForm = 0;
+	}
+
+	$scope.showFinal = function(){
+		$scope.isShowResult = 1;
+		$scope.isShowForm = 0;
+		$scope.isShowButtons = 0;
+	}
+
+	$scope.showForm = function(){
+		$scope.isShowForm = 1;
+		$scope.isShowResult = 0;
+	}
 });
